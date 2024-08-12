@@ -1,7 +1,7 @@
 .features__title {
   @include header-2;
   margin-bottom: 42px;
-  letter-spacing: -1px;
+  font-weight: 400;
 
   @media (min-width: $desktop-width) {
     margin-bottom: 32px;
@@ -57,7 +57,7 @@
   &--leaf::after {
     height: 28px;
     width: 25px;
-    background-image: url("../../img/icons/leaf.svg");
+    background-image: url("../img/icons/leaf.svg");
     left: -62px;
     top: 14px;
   }
@@ -65,7 +65,7 @@
   &--powder::after {
     height: 29px;
     width: 27px;
-    background-image: url("../../img/icons/powder.svg");
+    background-image: url("../img/icons/powder.svg");
     left: -63px;
     top: 14px;
   }
@@ -73,7 +73,7 @@
   &--utensils::after {
     height: 30px;
     width: 25px;
-    background-image: url("../../img/icons/utensils.svg");
+    background-image: url("../img/icons/utensils.svg");
     left: -64px;
     top: 13px;
   }
@@ -81,7 +81,7 @@
   &--clock::after {
     height: 31px;
     width: 27px;
-    background-image: url("../../img/icons/clock.svg");
+    background-image: url("../img/icons/clock.svg");
     left: -63px;
     top: 13px;
   }
@@ -105,7 +105,6 @@
     margin-bottom: 62px;
     font-size: $size-xxl;
     line-height: 60px;
-    letter-spacing: -2px;
   }
 
   .features__list {

@@ -44,13 +44,8 @@
 }
 
 @media (max-width: calc($tablet-width - 1px)) {
-  .hero__cat-image-mobile {
-    display: block;
-    max-height: 302px;
-  }
-
-  .hero__cat-image-mobile::before,
-  .hero__cat-image-mobile::after {
+  .hero__wrapper::after,
+  .hero__wrapper::before {
     content: "";
     display: block;
     height: 100%;
@@ -62,17 +57,17 @@
     z-index: -1;
   }
 
-  .hero__cat-image-mobile::before {
-    background-image: url("../../img/hero/index-background-mobile.jpg");
+  .hero__wrapper::before {
+    background-image: url("../img/hero/index-background-mobile.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../../img/hero/index-background-mobile@2x.jpg");
+      background-image: url("../img/hero/index-background-mobile@2x.jpg");
     }
   }
 
-  .hero__cat-image-mobile::after {
+  .hero__wrapper::after {
     background-color: $primary-color;
     opacity: 85%;
   }
@@ -124,17 +119,9 @@
     width: 709px;
     height: 609px;
   }
-
-  .hero__cat-image-mobile {
-    display: none;
-  }
 }
 
 @media (max-width: calc($desktop-width - 1px)) {
-  .hero__cat-image {
-    display: none;
-  }
-
   @media (min-width: $tablet-width) {
     .hero__text-wrapper {
       padding: 42px 0 0 90px;
@@ -154,33 +141,33 @@
     margin-bottom: 80px;
   }
 
-  .hero__cat-image {
+  .hero::after,
+  .hero::before {
+    content: "";
+    position: absolute;
     top: -168px;
     right: 0;
     width: 50%;
     min-height: 694px;
     height: 100%;
+  }
+
+  .hero::after {
+    z-index: -2;
     background-color: $primary-color;
-    background-image: url("../../img/hero/index-background-desktop.jpg");
+    background-image: url("../img/hero/index-background-desktop.jpg");
     background-size: cover;
     background-position: center center;
-    position: absolute;
-    z-index: -1;
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../../img/hero/index-background-desktop@2x.jpg");
+      background-image: url("../img/hero/index-background-desktop@2x.jpg");
     }
+  }
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $primary-color;
-      opacity: 0.85;
-    }
+  .hero::before {
+    z-index: -1;
+    background-color: $primary-color;
+    opacity: 0.85;
   }
 
   .hero__title {

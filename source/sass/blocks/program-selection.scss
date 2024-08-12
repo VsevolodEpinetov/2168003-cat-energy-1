@@ -8,7 +8,7 @@
   line-height: 36px;
   margin: 27px 0 37px;
   text-align: left;
-  letter-spacing: -1px;
+  font-weight: 400;
 }
 
 .program-selection__description {
@@ -23,7 +23,6 @@
   .program-selection__title {
     font-size: $size-xxl;
     line-height: 60px;
-    letter-spacing: -2px;
     margin-top: 51px;
     margin-bottom: 55px;
   }

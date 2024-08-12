@@ -20,7 +20,7 @@ import browser from 'browser-sync';
 
 // Styles
 
-export const styles = () => {
+const styles = () => {
   return gulp.src('source/sass/style.scss', { sourcemaps: true })
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -36,22 +36,22 @@ export const styles = () => {
 }
 
 // HTML
-export const html = () => {
+const html = () => {
   return gulp.src('source/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('build'))
 }
 
 // JS
-export const js = () => {
+const js = () => {
   return gulp.src('source/js/*.js')
     .pipe(terser())
     .pipe(gulp.dest('build/js'))
 }
 
 //Images
-export const optimizeImages = () => {
-  return gulp.src(['source/img/**/*.{jpg,png,svg}', '!sources/img/icons/*.svg'])
+const optimizeImages = () => {
+  return gulp.src(['source/img/**/*.{jpg,png,svg}', '!source/img/sprite.svg'])
     .pipe(imagemin([
       imagemin.optipng({ optimizationLevel: 3 }),
       imagemin.jpegtran({ progressive: true }),
@@ -60,12 +60,17 @@ export const optimizeImages = () => {
     .pipe(gulp.dest('build/img'))
 }
 
-export const copyImages = () => {
+export const moveSprite = () => {
+  return gulp.src(['source/img/sprite.svg'])
+    .pipe(gulp.dest('build/img'))
+}
+
+const copyImages = () => {
   return gulp.src('source/img/**/*.{jpg,png,svg}')
     .pipe(gulp.dest('build/img'))
 }
 
-export const images2WebP = () => {
+const images2WebP = () => {
   return gulp.src(['source/img/**/*.{jpg,png}', '!source/img/favicons/*.png'])
     .pipe(webp({quality: 90}))
     .pipe(gulp.dest('build/img'))
@@ -73,7 +78,7 @@ export const images2WebP = () => {
 
 // SVG
 
-export const makeSprite = () => {
+const makeSprite = () => {
   return gulp.src('source/img/icons/*.svg')
     .pipe(svgo())
     .pipe(svgstore())
@@ -82,19 +87,19 @@ export const makeSprite = () => {
 }
 
 // Copy
-export const copy = (done) => {
+const copy = (done) => {
   return gulp.src(['source/fonts/**/*.{woff2,woff}', 'source/*.ico'], {
     base: 'source'
   })
   .pipe(gulp.dest('build'))
 }
 
-// // Clean
+// Clean
 export const clean = (done) => {
   return deleteAsync('build')
 }
 
-// // Server
+// Server
 
 const server = (done) => {
   browser.init({
@@ -132,6 +137,7 @@ export const build = gulp.series(
     html,
     js,
     makeSprite,
+    moveSprite,
     images2WebP
   )
 )

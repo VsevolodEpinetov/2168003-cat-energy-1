@@ -19,7 +19,7 @@
   @include header-2;
   margin: 3px 0 40px;
   color: #000000;
-  letter-spacing: -1px;
+  font-weight: 400;
 }
 
 .example__description {
@@ -73,7 +73,6 @@
     font-size: $size-xxl;
     line-height: 60px;
     margin-bottom: 60px;
-    letter-spacing: -2px;
   }
 
   .example__description {
