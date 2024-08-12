@@ -437,6 +437,7 @@
 
   .form__fields-group--near.form__fields-group {
     gap: 80px;
+    flex-wrap: wrap;
   }
 
   .form__field-icon {
@@ -460,14 +461,7 @@
   }
 
   .form__checkboxes-wrapper {
-    padding-right: 97px;
-  }
-
-  .custom-checkbox-wrapper:nth-of-type(2) {
-    margin-left: -79px;
-  }
-
-  .custom-checkbox-wrapper:nth-of-type(3) {
-    left: -15px;
+    justify-content: flex-start;
+    width: 1300px;
   }
 }

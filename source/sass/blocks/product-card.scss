@@ -115,7 +115,7 @@
 
   & .product-card__title {
     width: 250px;
-    letter-spacing: -0.3px;
+    font-weight: 400;
 
     &::before,
     &::after {
@@ -212,7 +212,6 @@
     line-height: 24px;
     width: 140px;
     margin: 0 auto;
-    letter-spacing: -0.4px;
   }
 
   .product-card__description-item {

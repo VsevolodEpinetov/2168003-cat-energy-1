@@ -25,7 +25,7 @@
   background-color: #ffffff;
   border-right: 20px solid #ffffff;
   z-index: 2;
-  letter-spacing: -0.8px;
+  font-weight: 400;
 }
 
 .additional-goods__list {
@@ -78,12 +78,12 @@
   background-color: $primary-color;
   text-align: center;
   position: relative;
-  background-image: url("../../img/catalog-banner/catalog-banner-mobile.jpg");
+  background-image: url("../img/catalog-banner/catalog-banner-mobile.jpg");
   background-position: center center;
   background-size: cover;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../../img/catalog-banner/catalog-banner-mobile@2x.jpg");
+    background-image: url("../img/catalog-banner/catalog-banner-mobile@2x.jpg");
   }
 
   &::after {
@@ -106,7 +106,7 @@
     left: 101px;
     width: 78px;
     height: 81px;
-    background-image: url("../../img/icons/gift.svg");
+    background-image: url("../img/icons/gift.svg");
     z-index: 2;
   }
 }
@@ -137,10 +137,10 @@
   .additional-goods__banner {
     min-height: 200px;
     padding: 71px 125px 69px 421px;
-    background-image: url("../../img/catalog-banner/catalog-banner-tablet.jpg");
+    background-image: url("../img/catalog-banner/catalog-banner-tablet.jpg");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../../img/catalog-banner/catalog-banner-tablet@2x.jpg");
+      background-image: url("../img/catalog-banner/catalog-banner-tablet@2x.jpg");
     }
   }
 
@@ -149,7 +149,7 @@
     line-height: 36px;
     border-right: 40px solid #ffffff;
     border-left: 40px solid #ffffff;
-    letter-spacing: -1.2px;
+    font-weight: 400;
     margin-bottom: 79px;
   }
 
@@ -256,21 +256,22 @@
 
   .additional-goods__banner-description {
     text-align: center;
+    width: 161px;
   }
 
   .additional-goods__banner {
     width: 300px;
     height: 100%;
     padding: 185px 42px 43px;
-    background-image: url("../../img/catalog-banner/catalog-banner-desktop.jpg");
+    background-image: url("../img/catalog-banner/catalog-banner-desktop.jpg");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../../img/catalog-banner/catalog-banner-desktop@2x.jpg");
+      background-image: url("../img/catalog-banner/catalog-banner-desktop@2x.jpg");
     }
 
     &::before {
       left: 83px;
-      top: 57px;
+      top: 97px;
     }
   }
 }
